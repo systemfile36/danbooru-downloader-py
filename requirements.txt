@@ -1,0 +1,6 @@
+pillow
+requests
+logging
+
+# For CLI
+click

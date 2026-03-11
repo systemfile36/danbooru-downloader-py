@@ -1,5 +1,5 @@
-from danbooru_downloader_py.commands import dump
+from danbooru_downloader_py.commands import run_dump
 
 __all__ = [
-    "dump"
+    "run_dump"
 ]

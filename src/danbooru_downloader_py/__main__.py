@@ -42,7 +42,7 @@ def dump(
     username: str, api_key: str,
 ) -> None:
 
-    danbooru_downloader_py.dump(
+    danbooru_downloader_py.run_dump(
         root, start_page, end_page, 
         limit, query, exts, 
         use_resizing, target_size, 

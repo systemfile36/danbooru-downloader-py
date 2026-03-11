@@ -1,1 +1,1 @@
-from danbooru_downloader_py.commands.dump import dump
+from danbooru_downloader_py.commands.dump import run_dump

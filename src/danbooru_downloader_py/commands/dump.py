@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Dict, Iterator, List, Tuple
 from concurrent.futures import Future, as_completed
 
-from danbooru_downloader_py.file_io import check_path_raise, check_path
+from danbooru_downloader_py.file_io import check_path
 from danbooru_downloader_py.concurrent import DatabaseManager, HttpManager, ImageManager, PostFilter, FileWriter
 from danbooru_downloader_py.project import ProjectPaths
 from danbooru_downloader_py.dto import Post
@@ -60,6 +60,11 @@ def iter_queries(query: Path | str) -> Iterator[str]:
         with open(query, "r", encoding="utf-8") as file:
             for line in file:
                 current_query = line.strip()
+
+                # Ignore comment 
+                if current_query.startswith('#'):
+                    continue
+
                 if current_query:
                     yield current_query
     else:

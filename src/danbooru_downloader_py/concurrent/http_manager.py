@@ -53,6 +53,7 @@ class HttpManager(BaseContextManager):
 
         self.retry_delay = retry_delay
 
+    @staticmethod
     def _retry_cond(e: BaseException) -> bool:
         logger.error(e)
         return True

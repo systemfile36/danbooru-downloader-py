@@ -126,6 +126,7 @@ class DatabaseManager(BaseContextManager):
         return Task(retry_count=RETRY_COUNT, retry_condition=self._retry_cond, retry_delay=RETRY_DELAY, 
                     func=func, done=done, **kwargs)
 
+    @staticmethod
     def _retry_cond(e: BaseException) -> bool:
         logger.error(e)
         return True

@@ -27,6 +27,7 @@ class FileWriter(BaseContextManager):
     def __init__(self, num_workers: int = 6):
         self.executor = ThreadPoolExecutor(max_workers=num_workers)
 
+    @staticmethod
     def _retry_cond(e: BaseException) -> bool:
         logger.error(e)
         return True
